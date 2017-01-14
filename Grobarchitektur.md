@@ -1,0 +1,1 @@
+![Grobarchitektur](./Diagramme/Grobarchitektur.png)
