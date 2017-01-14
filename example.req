@@ -1,0 +1,45 @@
+
+// 5 Agenten, 12 Perioden, 1 Endprodukt <- für uns irrelevant
+5	12	1
+
+// Lagerkosten pro Stück
+1	0.1331
+2	0.121
+3	0.11
+4	0.05
+5	0.05
+
+// SetupKosten pro Perdiode, in der produziert wird
+1	3.2
+2	8.0
+3	20.0
+4	50.0
+5	50.0
+
+// Geforderte Mengen von Knoten 1 pro Periode
+1	80
+2	100
+3	125
+4	100
+5	50
+6	50
+7	100
+8	125
+9	125
+10	100
+11	50
+12	100
+
+// Baumstruktur
+1	2
+2	3
+3	4	5
+4
+5
+
+// Kapazitätsgrenze
+1	100
+2	80
+3	200
+4	120
+5	50
