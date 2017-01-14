@@ -57,7 +57,7 @@ Von Mediator:
 	new_proposal|int[]|Neuer Vorschlag/Proposal
 	reference_proposal|int[]|Letzter akzeptierter Vorschlag / aktuelle Lösung
 	total_rounds|int|Anzahl der Verhandlungsrunden
-	remained_rounds|int|Anzahl der noch ausstehenden Verhandlungen
+	remaining_rounds|int|Anzahl der noch ausstehenden Verhandlungen
 	
 	Mediator sendet ersten Vorschlag für eine Verhandlungsrunde mit 1000 Verhandlungen:
 	```json
@@ -66,7 +66,7 @@ Von Mediator:
 		"new_proposal"	 : [1,0,1,0,1,0,1,0,1,0,1,0],
 		"reference_proposal" : [1,0,1,0,1,0,1,0,1,0,1,0],
 		"total_rounds" : 1000,
-		"remained_rounds" : 1000
+		"remaining_rounds" : 1000
 	}
 	```
 
