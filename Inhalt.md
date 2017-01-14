@@ -1,10 +1,10 @@
-- [Mediator] (./Mediator.md)
+- [Mediator](./Mediator.md)
   - Architektur
   - Registrierung
   - Nachbarschaft / Vorschlagsgenerierung
-- Verhandlungsprotokoll
+- [Verhandlungsprotokoll](./Verhandlungsprotokoll.md)
   - Kodierung
-- [Agent(en)] (./Agent.md)
+- [Agent(en)](./Agent.md)
   - Erzeugung
   - Verhandlungslogik (Bewertungsfunktion)
 - Architektur
