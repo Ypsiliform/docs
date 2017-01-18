@@ -19,3 +19,17 @@ gemeinsam akzeptierte Lösungsvorschlag ist das Ergebnis der Verhandlung.
 
 ## Diagramm
 ![Sequenzdiagramm der Verhandlung](./Diagramme/Verhandlungsprotokoll.png)
+
+## Zu den Verhandlungen nach Finke
+- beide Agenten müssen T ausrechnen, indem sie zum Ausgangsprodukt 100 Lösungen berechnen und die durchschnittliche Abweichung berechnen
+- dieses T bleibt auf dem Agenten und wird während der ganzen Verhandlungen genutzt (e^((alt - neu)/T))
+- Damit soll vermieden werden, dass ein Agent nur 10% an Verschlechterung akzeptiert, der andere jedoch 50%
+- Vorteil: Verhandlung hat nur ja/nein
+- Nachteil: Code Duplizierung auf Mediator / Agent zur Berechnung der Nachbarn
+
+## Zu den Verhandlungen nach Homberger
+- Jeder Agent bekommt einen Satz an Vorschlaegen und muss die besten auswaehlen
+- Der Mediator entscheidet anhand der Uebereinstimmungen, welcher Satz als naechstes benutzt wird
+- es könnte z.B. nach Praeferenz sortiert werden
+- Vorteil: Keine init Phase notwendig, keine Code Duplizierung
+- Nachteil: Mehr Daten zu versenden, mögliche Beeinflussung bei lernenden Agenten
