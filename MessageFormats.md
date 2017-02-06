@@ -9,7 +9,7 @@ Von Agenten:
 	id|int|Eindeutiger Agentnummer innerhalb einer Konfigurationsdatei
 	config|String|Bezeichnung der Konfigurationsdatei
 	requires|int[]|optionale Nummern der Agent von denen dieser abhängig ist
-	demand|int[]|optionaler Bedarf für die 12 Perioden (nur 1 Agent)
+	demand|int[]|optionaler Bedarf für die 12 Perioden (nur Agent 1)
 	
 	Beispiel JSON-codiert Agent 1 aus Konfigdatei "Bsp1":
 	```json
@@ -28,7 +28,7 @@ Von Agenten:
 	---|-----|------------
 	selection|int|gewählter Vorschlag
 	demands|Map<Int, Int[]>| Bedarf pro Periode für die entsprechende Lösung
-	cost|int|Totale Kosten für die gewählte Lösung 
+	cost|int|Totale Kosten für die gewählte Lösung (Nur für statische Auswertungen, debug-Zwecken und Überprüfung der Lösungsqualität) 
 	
 
 	Agent wählt einen Vorschlag und teilt Bedarfe mit
