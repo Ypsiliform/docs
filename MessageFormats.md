@@ -78,10 +78,10 @@ Von Mediator:
 	{ 	
 		"type"	    : "mediatorrequest",
 		"solutions"	 : [
-			{"no":1, "solution":[1,0,1,0,1,0,1,0,1,0,1,0], "demands":[10,20,30,40,50,60,70,80,90,100,110,120]},
-			{"no":2, "solution":[0,0,1,0,1,0,1,0,1,0,1,0], "demands":[100,20,30,40,50,60,70,80,90,100,110,120]},
-			{"no":3, "solution":[1,1,1,0,1,0,1,0,1,0,1,0], "demands":[1,20,30,40,50,60,70,80,90,100,110,120]},
-			{"no":4, "solution":[1,0,0,0,1,0,1,0,1,0,1,0], "demands":[10,200,30,40,50,60,70,80,90,100,110,120]}
+			{"no":1, "solution":[true,false,true,false,true,false,true,false,true,false,true,false], "demands":[10,20,30,40,50,60,70,80,90,100,110,120]},
+			{"no":2, "solution":[false,false,true,false,true,false,true,false,true,false,true,false], "demands":[100,20,30,40,50,60,70,80,90,100,110,120]},
+			{"no":3, "solution":[true,true,true,false,true,false,true,false,true,false,true,false], "demands":[1,20,30,40,50,60,70,80,90,100,110,120]},
+			{"no":4, "solution":[true,false,false,false,true,false,true,false,true,false,true,false], "demands":[10,200,30,40,50,60,70,80,90,100,110,120]}
 		]
 	}
 	```
@@ -96,7 +96,7 @@ Von Mediator:
 	```json
 	{ 	
 		"type"	    : "endnegotiation",
-		"solution"	 : [1,0,1,0,1,0,1,0,1,0,1,0]
+		"solution"	 : [true,false,true,false,true,false,true,false,true,false,true,false]
 	}
 	```
 
