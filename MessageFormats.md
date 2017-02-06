@@ -8,16 +8,45 @@ Von Agenten:
 	---|-----|------------
 	id|int|Eindeutiger Agentnummer innerhalb einer Konfigurationsdatei
 	config|String|Bezeichnung der Konfigurationsdatei
+	requires|int[]|optionale Nummern der Agent von denen dieser abhängig ist
+	demand|int[]|optionaler Bedarf für die 12 Perioden (nur 1 Agent)
 	
 	Beispiel JSON-codiert Agent 1 aus Konfigdatei "Bsp1":
 	```json
 	{ 	
 		"type"	    : "agentregistration",
 		"id"	   : 1,
-		"config" 	: "Bsp1"
+		"config" 	: "Bsp1",
+		"requires" : [2,3],
+		"demand": [1,2,3,4,5,6,7,8,9,10,11,12]
 	}
 	```
 
+-	AgentResponse:
+
+	Key|Value|Beschreibung
+	---|-----|------------
+	selection|int|gewählter Vorschlag
+	demands|Map<Int, Int[]>| Bedarf pro Periode für die entsprechende Lösung
+	cost|int|Totale Kosten für die gewählte Lösung 
+	
+
+	Agent wählt einen Vorschlag und teilt Bedarfe mit
+	```json
+	{ 	
+		"type"	    : "agentresponse",
+		"selection"	 : 1,
+		"demands"  : [
+			{"solution":1, "demand":[1,2,3,4,5,6,7,8,9,10,11,12]},
+			{"solution":2, "demand":[1,2,3,4,5,6,7,8,9,10,11,12]},
+			{"solution":3, "demand":[1,2,3,4,5,6,7,8,9,10,11,12]},
+			{"solution":4, "demand":[1,2,3,4,5,6,7,8,9,10,11,12]}
+		],
+		"cost":720
+	}
+	```
+	
+	**obsolete:**
 -	StartNegotiation:
 	
 	Key|Value|Beschreibung
@@ -34,39 +63,26 @@ Von Agenten:
 	}
 	```
 
--	ResponseProposal:
-
-	Key|Value|Beschreibung
-	---|-----|------------
-	accept|boolean|Vorschlag/Proposal akzeptiert (true) oder abgelehnt (false)
-
-	Agent nimmt Vorschlag an	
-	```json
-	{ 	
-		"type"	    : "responseproposal",
-		"accept"	 : true
-	}
-	```
 
 Von Mediator:
 
--	SendProposal:
+-	MediatorRequest:
 
 	Key|Value|Beschreibung
 	---|-----|------------
-	new_proposal|int[]|Neuer Vorschlag/Proposal
-	reference_proposal|int[]|Letzter akzeptierter Vorschlag / aktuelle Lösung
-	total_rounds|int|Anzahl der Verhandlungsrunden
-	remaining_rounds|int|Anzahl der noch ausstehenden Verhandlungen
+	solutions|Map<Int, Solution>|Neue Wahlvorschläge mit entsprechender Bedarfsanforderung
+
 	
-	Mediator sendet ersten Vorschlag für eine Verhandlungsrunde mit 1000 Verhandlungen:
+	Mediator sendet Vorschläge aus denen der Agent eine Lösung wählen kann
 	```json
 	{ 	
-		"type"	    : "sendproposal",
-		"new_proposal"	 : [1,0,1,0,1,0,1,0,1,0,1,0],
-		"reference_proposal" : [1,0,1,0,1,0,1,0,1,0,1,0],
-		"total_rounds" : 1000,
-		"remaining_rounds" : 1000
+		"type"	    : "mediatorrequest",
+		"solutions"	 : [
+			{"no":1, "solution":[1,0,1,0,1,0,1,0,1,0,1,0], "demands":[10,20,30,40,50,60,70,80,90,100,110,120]},
+			{"no":2, "solution":[0,0,1,0,1,0,1,0,1,0,1,0], "demands":[100,20,30,40,50,60,70,80,90,100,110,120]},
+			{"no":3, "solution":[1,1,1,0,1,0,1,0,1,0,1,0], "demands":[1,20,30,40,50,60,70,80,90,100,110,120]},
+			{"no":4, "solution":[1,0,0,0,1,0,1,0,1,0,1,0], "demands":[10,200,30,40,50,60,70,80,90,100,110,120]}
+		]
 	}
 	```
 
