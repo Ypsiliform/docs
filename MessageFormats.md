@@ -8,8 +8,8 @@ Von Agenten:
 	---|-----|------------
 	id|int|Eindeutiger Agentnummer innerhalb einer Konfigurationsdatei
 	config|String|Bezeichnung der Konfigurationsdatei
-	requires|int[]|optionale Nummern der Agent von denen dieser abhängig ist
-	demand|int[]|optionaler Bedarf für die 12 Perioden (nur Agent 1)
+	requires|int[]|optionale Nummern der Agent von denen dieser abhÃ¤ngig ist
+	demand|int[]|optionaler Bedarf fÃ¼r die 12 Perioden (nur Agent 1)
 	
 	Beispiel JSON-codiert Agent 1 aus Konfigdatei "Bsp1":
 	```json
@@ -26,12 +26,12 @@ Von Agenten:
 
 	Key|Value|Beschreibung
 	---|-----|------------
-	selection|int|gewählter Vorschlag
-	demands|Map<Int, Int[]>| Bedarf pro Periode für die entsprechende Lösung
-	cost|int|Totale Kosten für die gewählte Lösung (Nur für statische Auswertungen, debug-Zwecken und Überprüfung der Lösungsqualität) 
+	selection|int|gewÃ¤hlter Vorschlag
+	demands|Map<Int, Int[]>| Bedarf pro Periode fÃ¼r die entsprechende LÃ¶sung
+	cost|int|Totale Kosten fÃ¼r die gewÃ¤hlte LÃ¶sung (Nur fÃ¼r statische Auswertungen, debug-Zwecken und ÃœberprÃ¼fung der LÃ¶sungsqualitÃ¤t) 
 	
 
-	Agent wählt einen Vorschlag und teilt Bedarfe mit
+	Agent wÃ¤hlt einen Vorschlag und teilt Bedarfe mit
 	```json
 	{ 	
 		"type"	    : "agentresponse",
@@ -54,7 +54,7 @@ Von Agenten:
 	agent|int|Agentnummer des Agentens mit dem verhandelt werden soll
 	period|int|Anzahl an Perioden / Buckets
 	
-	Beispiel JSON-codier Agent 1 möchte mit Agent 2 über 12 Perioden verhandeln:
+	Beispiel JSON-codier Agent 1 mÃ¶chte mit Agent 2 Ã¼ber 12 Perioden verhandeln:
 	```json
 	{ 	
 		"type"	    : "startnegotiation",
@@ -70,10 +70,10 @@ Von Mediator:
 
 	Key|Value|Beschreibung
 	---|-----|------------
-	solutions|Map<Int, Solution>|Neue Wahlvorschläge mit entsprechender Bedarfsanforderung
+	solutions|Map<Int, Solution>|Neue WahlvorschlÃ¤ge mit entsprechender Bedarfsanforderung
 
 	
-	Mediator sendet Vorschläge aus denen der Agent eine Lösung wählen kann
+	Mediator sendet VorschlÃ¤ge aus denen der Agent eine LÃ¶sung wÃ¤hlen kann
 	```json
 	{ 	
 		"type"	    : "mediatorrequest",
@@ -90,7 +90,7 @@ Von Mediator:
 	
 	Key|Value|Beschreibung
 	---|-----|------------
-	solution|int[]|Lösung/Ergebnis der Verhandlung
+	solution|boolean[]|LÃ¶sung/Ergebnis der Verhandlung
 	
 	Mediator sendet das Ergebnis der Verhandlung:
 	```json
