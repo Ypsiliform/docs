@@ -1,0 +1,4 @@
+Um eine Konfigurationsdatei zu starten:
+agent.jar (agent-jar-with-dependencies.jar zu agent.jar umbenannt) muss neben der starter-jar-with-dependencies.jar liegen
+java -jar starter-jar-with-dependencies.jar ws://localhost:8080/mediator/mediator "C:\git\code\configurations\constraint co
+nfigurations\ph1in04st4de1mh0ms0low.req"
