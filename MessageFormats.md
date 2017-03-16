@@ -35,14 +35,14 @@ Von Agenten:
 	```json
 	{ 	
 		"type"	    : "agentresponse",
-		"selection"	 : 1,
-		"demands"  : [
+		"selection" : 1,
+		"demands"   : [
 			{"solution":1, "demand":[1,2,3,4,5,6,7,8,9,10,11,12]},
 			{"solution":2, "demand":[1,2,3,4,5,6,7,8,9,10,11,12]},
 			{"solution":3, "demand":[1,2,3,4,5,6,7,8,9,10,11,12]},
 			{"solution":4, "demand":[1,2,3,4,5,6,7,8,9,10,11,12]}
 		],
-		"cost":720
+		"costs": [138.5, 75.0, 249.925, 217.375]
 	}
 	```
 	
@@ -57,9 +57,9 @@ Von Agenten:
 	Beispiel JSON-codier Agent 1 möchte mit Agent 2 über 12 Perioden verhandeln:
 	```json
 	{ 	
-		"type"	    : "startnegotiation",
+		"type"	 : "startnegotiation",
 		"agent"	 : 2,
-		"period" 	 : 12
+		"period" : 12
 	}
 	```
 
